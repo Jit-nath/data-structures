@@ -50,10 +50,10 @@ void mergeSort(int arr[], int l, int r) {
     }
 }
 
-void printArray(int A[], int size) {
+void printArray(int array[], int size) {
     int i;
     for (i = 0; i < size; i++)
-        printf("%d ", A[i]);
+        printf("%d ", array[i]);
     printf("\n");
 }
 

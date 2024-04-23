@@ -34,26 +34,26 @@ void quickSort(int arr[], int low, int high)
         quickSort(arr, pi + 1, high);
     }
 }
+void printArray(int array[], int size)
+{
+    int i;
+    for (i = 0; i < size; i++)
+        printf("%d ", array[i]);
+    printf("\n");
+}
 
 int main()
 {
     int arr[] = {10, 7, 8, 9, 1, 5};
     int n = sizeof(arr) / sizeof(arr[0]);
 
-    printf("previous array\n");
-    for (int i = 0; i < n; i++)
-    {
-        printf("%d ", arr[i]);
-    }
+    printf("\nprevious array\n");
+    printArray(arr, n);
 
-    // Function call
     quickSort(arr, 0, n - 1);
 
-    // Print the sorted array
     printf("\nSorted Array\n");
-    for (int i = 0; i < n; i++)
-    {
-        printf("%d ", arr[i]);
-    }
+    printArray(arr, n);
+
     return 0;
 }
