@@ -1,34 +1,32 @@
 #include <stdio.h>
-#include<string>
-int main()
-{
-    char text[1000], blank[1000];
-    int c = 0, d = 0;
+#include <string.h>
 
-    printf("Enter some text\n");
-    fgets(text,strlen(text),stdin);
+char *removeBlanks(char *str) {
+    if (str == NULL)
+        return NULL;
 
-    while (text[c] != '\0') 
-    {
-        if (text[c] == ' ') 
-        {
-            int temp = c + 1;
-            if (text[temp] != '\0') 
-            {
-                while (text[temp] == ' ' && text[temp] != '\0') 
-                {
-                    if (text[temp] == ' ') 
-                        c++;
-                    temp++;
-                }         
-            }
+    char *dest = str;
+    char *src = str;
+
+    while (*src) {
+        if (*src != ' ' && *src != '\t') {
+            *dest = *src;
+            dest++;
         }
-        blank[d] = text[c];
-        c++;
-        d++;
+        src++;
     }
+    *dest = '\0';
 
-    blank[d] = '\0';
-    printf("Text after removing blanks\n%s\n", blank);
+    return str;
+}
+
+int main() {
+    // Create modifiable string buffer
+    char str[] = "I am Jit";
+
+    char *newstr = removeBlanks(str);
+
+    printf("Text before removing blanks: %s", "I am Jit");
+    printf("\nText after removing blanks: %s", newstr);
     return 0;
 }

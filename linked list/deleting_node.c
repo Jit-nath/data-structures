@@ -4,12 +4,12 @@
 // Define a structure for a node in the linked list
 struct Node {
     int data;
-    struct Node* next;
+    struct Node *next;
 };
 
 // Function to create a new node
-struct Node* createNode(int data) {
-    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+struct Node *createNode(int data) {
+    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
     if (newNode == NULL) {
         printf("Memory allocation failed!\n");
         exit(1);
@@ -20,9 +20,9 @@ struct Node* createNode(int data) {
 }
 
 // Function to delete the first occurrence of a given key in the linked list
-struct Node* deleteNode(struct Node* head, int key) {
-    struct Node* temp = head;
-    struct Node* prev = NULL;
+struct Node *deleteNode(struct Node *head, int key) {
+    struct Node *temp = head;
+    struct Node *prev = NULL;
 
     // If key is found at head
     if (temp != NULL && temp->data == key) {
@@ -52,9 +52,9 @@ struct Node* deleteNode(struct Node* head, int key) {
 }
 
 // Function to display the linked list
-void display(struct Node* head) {
+void display(struct Node *head) {
     printf("Linked list: ");
-    struct Node* temp = head;
+    struct Node *temp = head;
     while (temp != NULL) {
         printf("%d ", temp->data);
         temp = temp->next;
@@ -63,7 +63,7 @@ void display(struct Node* head) {
 }
 
 int main() {
-    struct Node* head = NULL;
+    struct Node *head = NULL;
     int key;
 
     // Create a linked list

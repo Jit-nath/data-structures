@@ -4,12 +4,12 @@
 // Define a structure for a node in the linked list
 struct Node {
     int data;
-    struct Node* next;
+    struct Node *next;
 };
 
 // Function to create a new node
-struct Node* createNode(int data) {
-    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+struct Node *createNode(int data) {
+    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
     if (newNode == NULL) {
         printf("Memory allocation failed!\n");
         exit(1);
@@ -20,8 +20,8 @@ struct Node* createNode(int data) {
 }
 
 // Function to insert a node at any position in the linked list
-struct Node* insertAtPosition(struct Node* head, int data, int position) {
-    struct Node* newNode = createNode(data);
+struct Node *insertAtPosition(struct Node *head, int data, int position) {
+    struct Node *newNode = createNode(data);
 
     // If position is 1, insert at the beginning
     if (position == 1) {
@@ -30,8 +30,8 @@ struct Node* insertAtPosition(struct Node* head, int data, int position) {
         return newNode;
     }
 
-    struct Node* temp = head;
-    struct Node* prev = NULL;
+    struct Node *temp = head;
+    struct Node *prev = NULL;
 
     // Traverse the list to find the position
     for (int i = 1; i < position && temp != NULL; i++) {
@@ -56,9 +56,9 @@ struct Node* insertAtPosition(struct Node* head, int data, int position) {
 }
 
 // Function to display the linked list
-void display(struct Node* head) {
+void display(struct Node *head) {
     printf("Linked list: ");
-    struct Node* temp = head;
+    struct Node *temp = head;
     while (temp != NULL) {
         printf("%d ", temp->data);
         temp = temp->next;
@@ -67,7 +67,7 @@ void display(struct Node* head) {
 }
 
 int main() {
-    struct Node* head = NULL;
+    struct Node *head = NULL;
     int data, position;
 
     // Create a linked list
